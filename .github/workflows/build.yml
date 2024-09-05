@@ -26,7 +26,7 @@ jobs:
           tag_name: Release_date_${{ env.date }}
           draft: false
           prerelease: false
-          body: "### Nueva versión de la app!\n Wow, it worked like a charm 🎉"
+          body: "### Nueva versión de la app!\n Disfruta de los últimos cambios"
 
 
   pyinstaller-build:
