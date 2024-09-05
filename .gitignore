@@ -1,0 +1,8 @@
+.env
+build
+dist
+
+**/__pycache__/**
+
+ScriptsCastulo
+create_new_tag.yaml

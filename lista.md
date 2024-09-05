@@ -1,0 +1,61 @@
+0001 Ceramica a mano;Peso 0001;
+0002 Barniz Negro;Peso 0002;
+0003 Ceramica Pintada;Peso 003;
+0004 Ceramica Gris;Peso 004;
+0005 Ceramica de Cocina;Peso 0005;
+0006 Ceramica Comun;Peso 0006;
+0007 Mortero;Peso 0007;
+0008 Fusayola;Peso 0008;
+0009 Campaniense;Peso 0009;
+0010 T.S. Italica;Peso 0010;
+0011 Marmorata;Peso 0011;
+0012 T.S. Sudgalica;Peso 0012;
+0013 T.S. Hispanica;Peso 0013;
+0014 T.S. Africana;Peso 0014;
+0015 T.S. Meridional;Peso 0015;
+0016 Paredes finas;Peso 0016;
+0017 Cascara de huevo;Peso 0017;
+0018 Paleocristiana;Peso 0018;
+0019 Vidriada;Peso 0019;
+0020 Lucernas;Peso 0020;
+0021 Anforas;Peso 0021;
+0022 T.S. Aretina;Peso 0022;
+0023 T.S. Focense;Peso 0023;
+0024 T.S. Hispanica tardia;Peso 0024;
+0025 Lucente;Peso 0025;
+0026 Terracota;Peso 0026;
+0098 Otras ceramicas;Peso 0098;
+0099 Residuos;Peso 0099;
+0101 Tagula;Peso 0101;
+
+
+"0102 Ambrice",
+"Peso 0102",
+"0103 ladrillo",
+"Peso 0103",
+"0104 Adobe",
+"Peso 0104",
+"0105 Cornisa",
+"Peso 0105",
+"0106 Revestimiento",
+"Peso 0106",
+"0107 Estuco",
+"Peso 0107",
+"0108 Pavimento",
+"Peso 0108",
+"0109 Sillar",
+"Peso 0109",
+"0110 Basa",
+"Peso 0110",
+"0111 Fuste",
+"Peso 0111",
+"0112 Capitel",
+"Peso 0112",
+"0113 Arquitrabe",
+"Peso 0113",
+"0114 Friso",
+"Peso 0114",
+"0115 Losa",
+"Peso 0115",
+"0116 Pintura mural",
+"Peso 0116",

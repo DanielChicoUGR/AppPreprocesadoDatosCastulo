@@ -1,0 +1,69 @@
+name: Build and publish Executableas
+
+on:
+  push:
+    branches:
+      - releases
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Get current date
+        id: get_date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Create or Update Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.token }}
+        with:
+          tag_name: Release_date_${{ env.date }}
+          draft: false
+          prerelease: false
+          body: "### Nueva versión de la app!\n Wow, it worked like a charm 🎉"
+
+
+  pyinstaller-build:
+    needs: create-release
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ windows-latest,ubuntu-latest,]
+    steps:
+      - name: Create Executable
+        uses: sayyid5416/pyinstaller@v1
+        with:
+          python_ver: '3.10'
+          spec: 'PreprocesadoDatosCastulo.spec'
+          requirements: 'requirements.txt'
+          upload_exe_with_name: 'PreprocesadoDatosCastulo_${{ matrix.os }}'
+
+
+      - name: Upload Release Asset Ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/upload-release-asset@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.token }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: dist/PreprocesadoDatosCastulo
+          asset_name: PreprocesadoDatosCastulo_${{ matrix.os }}
+          asset_content_type: application/octet-stream
+
+      - name: Upload Release Asset Windows
+        if: matrix.os == 'windows-latest'
+        uses: actions/upload-release-asset@latest
+        env:
+            GITHUB_TOKEN: ${{ secrets.token }}
+        with:
+            upload_url: ${{ needs.create-release.outputs.upload_url }}
+            asset_path: dist/PreprocesadoDatosCastulo.exe
+            asset_name: PreprocesadoDatosCastulo_${{ matrix.os }}.exe
+            asset_content_type: application/octet-stream
+          
